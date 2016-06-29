@@ -1,0 +1,3 @@
+觉得shutdwon的位置应该调整好。
+目前是放在一次communication的最后，但是，如果有exe执行子程序时，就需要父进程sleep一下，以免太早运行到shutdown位置关闭socket结果子程序的输出无效。
+所以应该放在每种文件资源请求的分支下进行shutdown才为好，逻辑够独立。
